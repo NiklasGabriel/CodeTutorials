@@ -1,0 +1,140 @@
+/* - - - - - - - - - - - - - */
+/*        stylesheet         */
+/* - - - - - - - - - - - - - */
+/*··|\·····|·····|¯¯¯¯¯······*/
+/*··|·\····|·····|···········*/
+/*··|··\···|·····|···········*/
+/*··|···\··|·····|··___······*/
+/*··|····\·|·····|·····|·····*/
+/*··|·····\|·[]···¯¯¯¯¯|·[]··*/
+/* - - - - - - - - - - - - - */
+
+/* SCHRIFT */
+@font-face {
+    src: url(../fonts/Raleway.ttf);
+    font-family: Raleway, Arial, Helvetica, sans-serif;
+}
+body {
+    font-family: Raleway, Arial;
+}
+
+/* STANDART */
+body {
+    margin: 0;
+    padding: 0;
+}
+h1 {
+    margin: 0;
+    padding: 0;
+}
+p {
+    margin: 0;
+}
+a {
+    margin: 0;
+    text-decoration: none;
+    color: #fff;
+}
+ul {
+    margin: 0;
+}
+
+/* CENTER VIEW */
+.content {
+    margin: 20px 15px;
+}
+.center_view {
+    background-color: #16758c;
+    text-align: center;
+    margin: 0 25%;
+    padding: 15px;
+    border-radius: 15px;
+    color: #ffffff;
+}
+.center_view_input {
+    width: 70%;
+    height: 30px;
+    padding: 0 10px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: 14px;
+    background-color: #fff;
+    color: #222222;
+}
+.center_view_btn {
+    width: 60%;
+    height: 30px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: 14px;
+    background-color: #fff;
+    color: #222222;
+}
+.center_viw_link {
+    padding: 5px 0;
+    display: inline-block;
+    text-align: right;
+    position: relative;
+}
+.center_viw_link::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    transition: all 0.5s ease-in-out;
+}
+.center_viw_link:hover::before {
+    width: 100%;
+}
+
+@media (max-width: 850px) {
+    .center_view {
+        margin: 0;
+    }
+}
+
+/* MENU */
+.menu {
+    margin: 0 15px;
+    padding: 15px 20px;
+    background-color: #16758c;
+    border-radius: 0 0 15px 15px;
+    color: #ffffff;
+}
+.menu_table {
+    width: 100%;
+}
+.menu_rechts {
+    text-align: right;
+}
+.menu_rechts a {
+    color: #ffffff;
+}
+.menu_rechts_div {
+    padding: 5px 0;
+    display: inline-block;
+    text-align: right;
+    position: relative;
+}
+.menu_rechts_div::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    transition: all 0.4s ease-in-out;
+}
+.menu_rechts_div:hover::before {
+    width: 100%;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 750px) {
+    
+}
