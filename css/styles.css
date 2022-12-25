@@ -72,8 +72,6 @@ ul {
 }
 .center_viw_link {
     padding: 5px 0;
-    display: inline-block;
-    text-align: right;
     position: relative;
 }
 .center_viw_link::before {
@@ -119,9 +117,21 @@ ul {
     color: #ffffff;
     font-size: large;
     margin: 0 20px;
+    padding: 5px 0;
+    position: relative;
 }
-#menuPC_rechts a:hover{
-    text-decoration: underline;
+#menuPC_rechts a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    transition: all 0.3s ease-in-out;
+}
+#menuPC_rechts a:hover::before {
+    width: 100%;
 }
 
 
