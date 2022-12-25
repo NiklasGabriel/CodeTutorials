@@ -98,39 +98,30 @@ ul {
 
 /* MENU */
 .menu {
-    margin: 0 15px;
-    padding: 15px 20px;
+    padding: 15px;
     background-color: #16758c;
     border-radius: 0 0 15px 15px;
     color: #ffffff;
 }
-.menu_table {
+#menuPC {
     width: 100%;
 }
-.menu_rechts {
-    text-align: right;
-}
-.menu_rechts a {
+#menuPC_header h1 {
+    margin: 0;
+    padding: 0;
     color: #ffffff;
 }
-.menu_rechts_div {
-    padding: 5px 0;
-    display: inline-block;
+#menuPC_rechts {
     text-align: right;
-    position: relative;
 }
-.menu_rechts_div::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 0;
-    height: 2px;
-    background-color: #ffffff;
-    transition: all 0.4s ease-in-out;
+#menuPC_rechts a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: large;
+    margin: 0 20px;
 }
-.menu_rechts_div:hover::before {
-    width: 100%;
+#menuPC_rechts a:hover{
+    text-decoration: underline;
 }
 
 

@@ -1,10 +1,13 @@
 <div class="menu">
-    <table class="menu_table">
+    <table id="menuPC">
         <tr>
-            <td class="menu_header"><h1>CodeLearning</h1></td>
-            <td class="menu_rechts"><div class="menu_rechts_div"><a href="index.php">Home</a></div></td>
-            <td class="menu_rechts"><div class="menu_rechts_div"><a href="dashboard.php">Dashboard</a></div></td>
-            <td class="menu_rechts"><div class="menu_rechts_div"><a href="login.php">Log In</a></div></td>
+            <td id="menuPC_header"><h1>CodeTutorials</h1></td>
+            <td id="menuPC_rechts">
+                <a href="index.php">Home</a>
+                <a href="index.php">Artikel</a>
+                <a href="dashboard.php">Dashboard</a>
+                <a href="login.php">Log In</a>
+            </td>
         </tr>
     </table>
 </div>
