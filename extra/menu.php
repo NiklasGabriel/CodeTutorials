@@ -6,7 +6,7 @@
                 <a href="index.php">Home</a>
                 <a href="index.php">Artikel</a>
                 <a href="dashboard.php">Dashboard</a>
-                <a href="login.php">Log In</a>
+                <a href="login.php">Anmelden</a>
             </td>
         </tr>
     </table>

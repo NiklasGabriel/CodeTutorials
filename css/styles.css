@@ -51,6 +51,9 @@ ul {
     border-radius: 15px;
     color: #ffffff;
 }
+.center_view_error_msg {
+    
+}
 .center_view_input {
     width: 70%;
     height: 30px;
@@ -132,10 +135,4 @@ ul {
 }
 #menuPC_rechts a:hover::before {
     width: 100%;
-}
-
-
-/* RESPONSIVE */
-@media (max-width: 750px) {
-    
 }

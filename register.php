@@ -40,17 +40,19 @@ if(isset($_GET['login'])) {
     <div class="content">
         <div class="center_view">
             <br>
-            <h1>LOG IN</h1>
+            <h1>REGISTRIERUNG</h1>
             <br>
             <?php echo("<p class='center_view_error_msg'>" . $errorMessage . "</p>")?>
             <br>
-            <form action="?login=1" method="post">
+            <form action="?register=1" method="post">
+                <input class="center_view_input" type="text" name="username" placeholder="Benutzername"><br><br>
                 <input class="center_view_input" type="email" name="email" placeholder="E-Mail"><br><br><br>
-                <input class="center_view_input" type="password" name="passwort" placeholder="Passwort"><br><br><br><br>
-                <Button class="center_view_btn">Anmelden</Button><br><br><br>
+                <input class="center_view_input" type="password" name="password1" placeholder="Passwort"><br><br>
+                <input class="center_view_input" type="password" name="password2" placeholder="Passwort wiedrholen"><br><br><br><br>
+                <Button class="center_view_btn">Registrieren</Button><br><br><br>
             </form>
             <p>
-                <a class="center_viw_link" href="register.php">Noch keinen Account, hier geht's zur Registrierung...</a>
+                <a class="center_viw_link" href="login.php">Schon einen Account, hier geht's zur Anmeldung...</a>
             </p>
             <br>
         </div>
