@@ -1,6 +1,11 @@
 <?php
 session_start();
 
+// Aus locken, wenn angemeldet
+if(isset($_SESSION['userid'])) {
+    session_unset();
+}
+
 // Standart Variablen
 $errorMessage = "";
 
@@ -45,7 +50,7 @@ if(isset($_GET['login'])) {
             <?php echo("<p class='center_view_error_msg'>" . $errorMessage . "</p>")?>
             <br>
             <form action="?login=1" method="post">
-                <input class="center_view_input" type="email" name="email" placeholder="E-Mail"><br><br><br>
+                <input class="center_view_input" type="email" name="email" placeholder="E-Mail"><br><br>
                 <input class="center_view_input" type="password" name="passwort" placeholder="Passwort"><br><br><br><br>
                 <Button class="center_view_btn">Anmelden</Button><br><br><br>
             </form>

@@ -9,25 +9,71 @@ $db_name = 'db.db';
 $server = "sqlite:$db_name";
 $verbindung = new PDO($server);
 
-if(isset($_GET['login'])) {
+// Verbindung zur Datenbank
+$db_name = 'user.db';
+$server = "sqlite:$db_name";
+$verbindung_user = new PDO($server);
+
+if(isset($_GET['register'])) {
+    $error = false;
+    $username = $_POST['username'];
     $email = $_POST['email'];
-    $passwort = $_POST['passwort'];
+    $passwort1 = $_POST['password1'];
+    $passwort2 = $_POST['password2'];
     
-    $sql_befehl = "SELECT * FROM users WHERE email = '$email'";
-    $statement = $verbindung->prepare($sql_befehl);
-    $statement->execute();
-    $user = $statement->fetch();
-    
-    //Überprüfung des Passworts
-    if ($user !== false && password_verify($passwort, $user['passwort'])) {
-    //$passwort_hash = password_hash($passwort, PASSWORD_DEFAULT);
-    //if ($user !== false && $passwort_hash = $user['passwort']) {
-        $_SESSION['userid'] = $user['username'];
-        echo "<script>window.location.href='dashboard.php'</script>";
-    } else {
-        $errorMessage = "E-Mail oder Passwort war ungültig.";
+    // Eingaben überprüfen
+    if(strlen($username) == 0) {
+        $errorMessage = 'Bitte einen Benutzernamen angeben.';
+        $error = true;
+    }     
+    if(strlen($passwort1) == 0) {
+        $errorMessage = 'Bitte ein Passwort angeben.';
+        $error = true;
+    }
+    if($passwort1 != $passwort2) {
+        $errorMessage = 'Die Passwörter müssen übereinstimmen.';
+        $error = true;
+    }
+
+    //Überprüfe, dass der Benutzername noch nicht registriert wurde
+    if(!$error) { 
+        $statement = $verbindung->prepare("SELECT * FROM users WHERE username = '$username'");
+        $result = $statement->execute();
+        $user = $statement->fetch();
+        
+        if($user !== false) {
+            $errorMessage = 'Dieser Benutzername ist bereits vergeben.';
+            $error = true;
+        }    
     }
     
+    //Überprüfe, dass die E-Mail-Adresse noch nicht registriert wurde
+    if(!$error) { 
+        $statement = $verbindung->prepare("SELECT * FROM users WHERE email = '$email'");
+        $result = $statement->execute();
+        $user = $statement->fetch();
+        
+        if($user !== false) {
+            $errorMessage = 'Diese E-Mail Adresse ist bereits vergeben.';
+            $error = true;
+        }    
+    }
+    
+    //Keine Fehler, wir können den Nutzer registrieren
+    if(!$error) {
+        $passwort_hash = password_hash($passwort1, PASSWORD_DEFAULT);
+        $verbindung->exec("INSERT INTO users (username, email, passwort) VALUES ('$username', '$email', '$passwort_hash')");
+
+        $verbindung_user->exec(
+        "CREATE TABLE '$username' (
+            'Spalte1' TEXT,
+            'Spalte2' TEXT
+        )"
+        );
+        
+
+        echo "<script>window.location.href='login.php'</script>";
+    } 
 }
 ?>
 <!DOCTYPE html>
