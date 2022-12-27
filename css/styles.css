@@ -44,6 +44,12 @@ a {
 ul {
     margin: 0;
 }
+ol {
+    margin: 0;
+}
+ul {
+    margin: 0;
+}
 
 /* CONTENT */
 .content {
@@ -189,4 +195,11 @@ ul {
 }
 .scroll_content {
     width: max-content;
+}
+
+/* ARTCLE */
+.article hr {
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin: 5px 0;
 }
