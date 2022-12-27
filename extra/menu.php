@@ -11,7 +11,7 @@
             <td id="menuPC_header"><h1>CodeTutorials</h1></td>
             <td id="menuPC_rechts">
                 <a href="index.php">Home</a>
-                <a href="artikel.php">Artikel</a>
+                <a href="preview.php">Artikel</a>
                 <a href="dashboard.php">Dashboard</a>
                 <a href="login.php"><?php echo $locker;?></a>
             </td>
